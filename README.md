@@ -294,10 +294,8 @@ Portanto para testar sem hardware:
 
 **1-**	
 	
-    git clone git@github.com:FS-AI/FS-AI_API.git  [Funções e estruturas de dados](#funções-e-estruturas-de-dados)
-    ```bash
-    git clone git@github.com:FS-AI/FS-AI_API.git  [Funções e estruturas de dados](#funções-e-estruturas-de-dados)
-    ```
+    git clone [git@github.com:FS-AI/FS-AI_API.git](git@github.com:FS-AI/FS-AI_API.git)
+    
 
  
    clone do repositório
