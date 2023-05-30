@@ -37,8 +37,9 @@ Portanto para testar sem hardware:
     cd FS-AI_API_Console
 
 
-4-	make
-	to build (library will build / rebuild as needed).
+4-	make  
+    to build (library will build / rebuild as needed).
+
 
 5- ./fs-ai_api_tester vcan0 
 	to run on vcan0.
