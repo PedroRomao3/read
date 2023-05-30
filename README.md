@@ -314,6 +314,7 @@ Este documento pretende listar os sinais do CAN_B bus usados para as comunica√ß√
 |                                 |          | 1 = battery charging                                             |
 |                                 |          | 2 = autonomous driving                                           |
 |                                 |          | 3 = manual driving                                               |
+|                                 |          | 4 = Shutdown                                               |
 | `WARN_BRAKE_PLAUSIBILITY`        | `Bit`    | Warning flag for the brake plausibility fault                    |
 | `WARN_KL15_UNDER_V`              | `Bit`    | Warning flag for low 12V battery voltage                         |
 | `WARN_AI_ESTOP_REQ`              | `Bit`    | Warning flag for an AI E-stop request                            |
