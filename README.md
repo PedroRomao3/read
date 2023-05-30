@@ -8,7 +8,7 @@
 
 ## Funções e estruturas de dados
 
-**O envio e receção dos dados é feito através do CAN bus e por funções já implementadas que só temos de chamar com as estruturas de dados certas:**
+**O envio e receção dos dados é feito através do CAN bus e por funções já implementadas que só temos de chamar com as estruturas de dados certas, ao contrário do que era feito antes já não nos é fornecida a library(.a) mas sim todo o source code, o que significa que temos a liberdade de fazer alterações se necesário:**
 ### fs-ai_api_init
 
 ```c
