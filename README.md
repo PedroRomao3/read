@@ -9,7 +9,7 @@
 ## Funções e estruturas de dados
 
 **O envio e receção dos dados é feito através do CAN bus e por funções já implementadas que só temos de chamar com as estruturas de dados certas:**
-## fs-ai_api_init
+### fs-ai_api_init
 
 ```c
 int fs-ai_api_init(char *CAN_interface, int debug, int simulate);
@@ -17,7 +17,7 @@ int fs-ai_api_init(char *CAN_interface, int debug, int simulate);
 
 Função que inicia a biblioteca.
 
-### Parâmetros
+#### Parâmetros
 
 - `char *CAN_interface`: String que referencia uma interface CAN válida.
 
@@ -29,7 +29,7 @@ Função que inicia a biblioteca.
   - Se `simulate` for diferente de 0: Os valores de simulação são carregados para a estrutura de dados.
   - De outra forma: Nada acontece.
 
-### Retorno
+#### Retorno
 
 - `int`: 
   - `EXIT_SUCCESS` (0) em caso de sucesso.
