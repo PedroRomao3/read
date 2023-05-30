@@ -41,7 +41,7 @@ Portanto para testar sem hardware:
     to build (library will build / rebuild as needed).
 
 
-5- ./fs-ai_api_tester vcan0 
+5-	./fs-ai_api_tester vcan0 
 	to run on vcan0.
 
 **Em caso de aparecer este erro**:
