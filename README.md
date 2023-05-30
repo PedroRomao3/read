@@ -137,6 +137,49 @@ typedef volatile struct fs_ai_api_ai2vcu_struct {
 } fs_ai_api_ai2vcu;
 #endif
 ```
+### fs_ai_api_imu_get_data
+
+```c
+void fs_ai_api_imu_get_data(fs_ai_api_imu *data);
+```
+Povoa a estrutura de dados `fs_ai_api_imu` com os últimos dados recebidos do PCAN-GPS que está equipado no veículo. A recepção dos dados é feita de forma assíncrona e armazenada temporariamente conforme vai sendo recebido.
+
+####Parâmetros
+`fs_ai_api_imu *data`
+```c
+#ifdef __cplusplus
+typedef volatile struct alignas(4) fs_ai_api_imu_struct {
+	volatile float		IMU_Acceleration_X_mG;
+	volatile float		IMU_Acceleration_Y_mG;
+	volatile float		IMU_Acceleration_Z_mG;
+	volatile float		IMU_Temperature_degC;
+	volatile uint8_t	IMU_VerticalAxis;
+	volatile uint8_t	IMU_Orientation;
+	volatile float		IMU_MagneticField_X_uT;
+	volatile float		IMU_MagneticField_Y_uT;
+	volatile float		IMU_MagneticField_Z_uT;
+	volatile float		IMU_Rotation_X_degps;
+	volatile float		IMU_Rotation_Y_degps;
+	volatile float		IMU_Rotation_Z_degps;
+} fs_ai_api_imu;
+#else
+typedef volatile struct fs_ai_api_imu_struct {
+	volatile _Alignas(4) float		IMU_Acceleration_X_mG;
+	volatile _Alignas(4) float		IMU_Acceleration_Y_mG;
+	volatile _Alignas(4) float		IMU_Acceleration_Z_mG;
+	volatile _Alignas(4) float		IMU_Temperature_degC;
+	volatile _Alignas(4) uint8_t	IMU_VerticalAxis;
+	volatile _Alignas(4) uint8_t	IMU_Orientation;
+	volatile _Alignas(4) float		IMU_MagneticField_X_uT;
+	volatile _Alignas(4) float		IMU_MagneticField_Y_uT;
+	volatile _Alignas(4) float		IMU_MagneticField_Z_uT;
+	volatile _Alignas(4) float		IMU_Rotation_X_degps;
+	volatile _Alignas(4) float		IMU_Rotation_Y_degps;
+	volatile _Alignas(4) float		IMU_Rotation_Z_degps;
+} fs_ai_api_imu;
+#endif
+```
+
 
 
 
