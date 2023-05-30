@@ -40,8 +40,13 @@ Portanto para testar sem hardware:
 4-	make  
     to build (library will build / rebuild as needed).
 
-5-	./fs-ai_api_tester vcan0  
-    to run on vcan0.
+5-
+
+
+    ./fs-ai_api_tester vcan0      
+    
+   
+   to run on vcan0.
 
 
 **Em caso de aparecer este erro**:
@@ -54,10 +59,9 @@ Error in ioctl(): No such device
 Can't open [vcan0]fs_ai_api_init() failed
 
 
-6-  
-    sudo ip link add dev vcan0 type vcan
+6- 
 
-    sudo ip link set vcan0 up
+    sudo ip link add dev vcan0 type vcan
     sudo ip link set vcan0 up
 
 
