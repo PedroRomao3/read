@@ -50,7 +50,7 @@ Povoa a estrutura de dados `fs_ai_api_vcu2ai` com os últimos dados recebidos do
 - `fs_ai_api_vcu2ai *data`: Estrutura de dados que será populada.
 ```c
 typedef volatile struct fs_ai_api_vcu2ai_struct {
-	volatile _Alignas(4) fs_ai_api_handshake_receive_bit_e	VCU2AI_HANDSHAKE_RECEIVE_BIT;
+	volatile _Alignas(4) fs_ai_api_handshake_receive_bit_e	VCU2AI_HANDSHAKE_RECEIVE_BIT; // _Alignas(x) usado por cause de requerimentos de memória da VCU, não é muito relevante
 	volatile _Alignas(4) fs_ai_api_res_go_signal_bit_e		VCU2AI_RES_GO_SIGNAL;
 	volatile _Alignas(4) fs_ai_api_as_state_e				VCU2AI_AS_STATE;
 	volatile _Alignas(4) fs_ai_api_ami_state_e				VCU2AI_AMI_STATE;
