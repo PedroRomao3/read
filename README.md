@@ -279,4 +279,44 @@ Este documento pretende listar os sinais do CAN_B bus usados para as comunica√ß√
 | `RR_PULSE_COUNT `  | `Unsigned` |Pulse counts da roda direita da frente|
 |||Intervalo: [0, 65535]|
 
+
+
 **VCU_STATUS:** VCU status and diagnostic data
+
+| Signal                          | Type     | Description                                                      |
+| :------------------------------ | :------- | :--------------------------------------------------------------- |
+| `SM_SYS`                        | `Enum`   | Active VCU main state machine state:                              |
+|                                 |          | 0 = INITIAL_ACTIONS                                              |
+|                                 |          | 1 = POWER_ON_SELF_TEST                                           |
+|                                 |          | 2 = AUX                                                          |
+|                                 |          | 3 = POWERTRAIN_ENABLE                                            |
+|                                 |          | 4 = DRIVE_AUTONOMOUS                                             |
+|                                 |          | 5 = DRIVE_MANUAL                                                 |
+|                                 |          | 6 = CHARGE                                                       |
+|                                 |          | 7 = SHUTDOWN                                                     |
+|                                 |          | 8 = SHUTDOWN_OFF                                                 |
+|                                 |          | 9 = PUSHBAR_MODE                                                 |
+| `SM_AS`                         | `Enum`   | Active autonomous driving state:                                 |
+|                                 |          | 1 = AS_OFF                                                       |
+|                                 |          | 2 = AS_READY                                                     |
+|                                 |          | 3 = AS_DRIVING                                                   |
+|                                 |          | 4 = AS_EMERGENCY_BRAKE                                           |
+|                                 |          | 5 = AS_FINISHED                                                  |
+|                                 |          | 6 = AS_R2D                                                       |
+| `R1_AI2VCU_STATUS_TIMEOUT_ERROR` | `Bit`    | Timeout error flag for AI2VCU_Status message                     |
+| `R1_AI2VCU_DRIVE_F_TIMEOUT_ERROR` | `Bit`    | Timeout error flag for AI2VCU_Drive_F message                     |
+| `R1_AI2VCU_DRIVE_R_TIMEOUT_ERROR` | `Bit`    | Timeout error flag for AI2VCU_Drive_R message                     |
+| `R1_AI2VCU_STATUS_HANDSHAKE_ERROR`| `Bit`    | Timeout error flag for the AI handshake                           |
+| `R1_AI2VCU_STEER_TIMEOUT_ERROR`   | `Bit`    | Timeout error flag for AI2VCU_Steer message                       |
+| `R1_AI2VCU_BRAKE_TIMEOUT_ERROR`   | `Bit`    | Timeout error flag for AI2VCU_Brake message                       |
+| `SYS_ACTION_STATE`               | `Enum`   | VCU operating mode:                                              |
+|                                 |          | 0 = initialise                                                   |
+|                                 |          | 1 = battery charging                                             |
+|                                 |          | 2 = autonomous driving                                           |
+|                                 |          | 3 = manual driving                                               |
+| `WARN_BRAKE_PLAUSIBILITY`        | `Bit`    | Warning flag for the brake plausibility fault                    |
+| `WARN_KL15_UNDER_V`              | `Bit`    | Warning flag for low 12V battery voltage                         |
+| `WARN_AI_ESTOP_REQ`              | `Bit`    | Warning flag for an AI E-stop request                            |
+| `WARN_AI_COMMS_LOST`             | `Bit`    | Warning flag for the AI comms lost fault                         |
+| `WARN_AUTO_BRAKING`              | `Bit`    | Warning flag for the autonomous braking fault                    |
+| `WARN_MISSION_STATUS`            | `Bit`    | Warning flag for the mission status fault                        |
