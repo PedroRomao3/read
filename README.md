@@ -14,28 +14,30 @@ Portanto para testar sem hardware:
 
 **build and run:**
 
-1-	git clone git@github.com:FS-AI/FS-AI_API.git
-	clone do repositório
+1-	git clone git@github.com:FS-AI/FS-AI_API.git  
+    clone do repositório
 
-2- cd FS-AI_API/ 
-verificar que estamos no diretório principal, que tem: 
-\Docs
-	(documentation files)
-\FS-AI_API
-	(library source code & makefile)
-\FS-AI_API_Console
-	(Console test programme)
-\FS-AI_API_Tester
-	(Test programme)
-\images
-	(images for Markdown files)
+
+2-	cd FS-AI_API/
+	verificar que estamos no diretório principal, que tem: 
+	
+	\Docs
+		(documentation files)
+	\FS-AI_API
+		(library source code & makefile)
+	\FS-AI_API_Console
+		(Console test programme)
+	\FS-AI_API_Tester
+		(Test programme)
+	\images
+		(images for Markdown files)
 
 3-  cd FS-AI_API_Tester  
     or  
     cd FS-AI_API_Console
 
 
-4-  make
+4-	make
 	to build (library will build / rebuild as needed).
 
 5- ./fs-ai_api_tester vcan0 
