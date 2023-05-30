@@ -14,7 +14,7 @@ Portanto para testar sem hardware:
 
 **build and run:**
 
-1- 	git clone git@github.com:FS-AI/FS-AI_API.git
+1-	git clone git@github.com:FS-AI/FS-AI_API.git
 	clone do repositório
 
 2- cd FS-AI_API/ 
