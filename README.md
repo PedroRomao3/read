@@ -144,7 +144,7 @@ void fs_ai_api_imu_get_data(fs_ai_api_imu *data);
 ```
 Povoa a estrutura de dados `fs_ai_api_imu` com os últimos dados recebidos do PCAN-GPS que está equipado no veículo. A recepção dos dados é feita de forma assíncrona e armazenada temporariamente conforme vai sendo recebido.
 
-####Parâmetros
+#### Parâmetros
 `fs_ai_api_imu *data`
 ```c
 #ifdef __cplusplus
