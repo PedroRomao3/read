@@ -180,6 +180,104 @@ typedef volatile struct fs_ai_api_imu_struct {
 #endif
 ```
 
+### fs_ai_api_gps_get_data
+
+```c
+void fs_ai_api_gps_get_data(fs_ai_api_gps *data);
+```
+
+Povoa a estrutura de dados `fs_ai_api_gps` com os últimos dados recebidos do PCAN-GPS que está equipado no veículo. A recepção dos dados é feita de forma assíncrona e armazenada temporariamente conforme vai sendo recebido. A única diferença em relação à função anterior é o fato de ser uma estrutura de dados diferente.
+
+```c
+#ifdef __cplusplus
+typedef volatile struct alignas(4) fs_ai_api_gps_struct {
+	volatile uint8_t	GPS_AntennaStatus;
+	volatile uint8_t	GPS_NumSatellites;
+	volatile uint8_t	GPS_NavigationMethod;
+	volatile float		GPS_Course_deg;
+	volatile float		GPS_Speed_kmh;
+	volatile float		GPS_Longitude_Minutes;
+	volatile uint16_t	GPS_Longitude_Degree;
+	volatile uint8_t	GPS_Longitude_IndicatorEW;
+	volatile float		GPS_Latitude_Minutes;
+	volatile uint16_t	GPS_Latitude_Degree;
+	volatile uint8_t	GPS_Latitude_IndicatorNS;
+	volatile float		GPS_Altitude;
+	volatile float		GPS_PDOP;
+	volatile float		GPS_HDOP;
+	volatile float		GPS_VDOP;
+	volatile uint8_t	GPS_UTC_Year;
+	volatile uint8_t	GPS_UTC_Month;
+	volatile uint8_t	GPS_UTC_DayOfMonth;
+	volatile uint8_t	GPS_UTC_Hour;
+	volatile uint8_t	GPS_UTC_Minute;
+	volatile uint8_t	GPS_UTC_Second;
+} fs_ai_api_gps;
+#else
+typedef volatile struct fs_ai_api_gps_struct {
+	volatile _Alignas(4) uint8_t	GPS_AntennaStatus;
+	volatile _Alignas(4) uint8_t	GPS_NumSatellites;
+	volatile _Alignas(4) uint8_t	GPS_NavigationMethod;
+	volatile _Alignas(4) float		GPS_Course_deg;
+	volatile _Alignas(4) float		GPS_Speed_kmh;
+	volatile _Alignas(4) float		GPS_Longitude_Minutes;
+	volatile _Alignas(4) uint16_t	GPS_Longitude_Degree;
+	volatile _Alignas(4) uint8_t	GPS_Longitude_IndicatorEW;
+	volatile _Alignas(4) float		GPS_Latitude_Minutes;
+	volatile _Alignas(4) uint16_t	GPS_Latitude_Degree;
+	volatile _Alignas(4) uint8_t	GPS_Latitude_IndicatorNS;
+	volatile _Alignas(4) float		GPS_Altitude;
+	volatile _Alignas(4) float		GPS_PDOP;
+	volatile _Alignas(4) float		GPS_HDOP;
+	volatile _Alignas(4) float		GPS_VDOP;
+	volatile _Alignas(4) uint8_t	GPS_UTC_Year;
+	volatile _Alignas(4) uint8_t	GPS_UTC_Month;
+	volatile _Alignas(4) uint8_t	GPS_UTC_DayOfMonth;
+	volatile _Alignas(4) uint8_t	GPS_UTC_Hour;
+	volatile _Alignas(4) uint8_t	GPS_UTC_Minute;
+	volatile _Alignas(4) uint8_t	GPS_UTC_Second;
+} fs_ai_api_gps;
+#endif
+```
+### fs_ai_api_get_can_stats
+
+```c
+void fs_ai_api_get_can_stats(can_stats_t *data);
+```
+
+Povoa a estrutura de dados `can_stats_t` com os últimos valores recebidos do veículo. Os dados não são recebidos de forma assíncrona e é utilizado para debugging.
+```c
+typedef struct can_stats_struct {
+	volatile uint32_t VCU2AI_Status_count;
+	volatile uint32_t VCU2AI_Drive_F_count;
+	volatile uint32_t VCU2AI_Drive_R_count;
+	volatile uint32_t VCU2AI_Steer_count;
+	volatile uint32_t VCU2AI_Brake_count;
+	volatile uint32_t VCU2AI_Wheel_speeds_count;
+	volatile uint32_t VCU2AI_Wheel_counts_count;
+	volatile uint32_t PCAN_GPS_BMC_Acceleration_count;
+	volatile uint32_t PCAN_GPS_BMC_MagneticField_count;
+	volatile uint32_t PCAN_GPS_L3GD20_Rotation_A_count;
+	volatile uint32_t PCAN_GPS_L3GD20_Rotation_B_count;
+	volatile uint32_t PCAN_GPS_GPS_Status_count;
+	volatile uint32_t PCAN_GPS_GPS_CourseSpeed_count;
+	volatile uint32_t PCAN_GPS_GPS_Longitude_count;
+	volatile uint32_t PCAN_GPS_GPS_Latitude_count;
+	volatile uint32_t PCAN_GPS_GPS_Altitude_count;
+	volatile uint32_t PCAN_GPS_GPS_Delusions_A_count;
+	volatile uint32_t PCAN_GPS_GPS_Delusions_B_count;
+	volatile uint32_t PCAN_GPS_GPS_DateTime_count;
+	volatile uint32_t unhandled_frame_count;
+} can_stats_t;
+```
+
+### fs_ai_api_clear_can_stats
+
+```c
+void fs_ai_api_clear_can_stats();
+```
+
+Limpa a `can_stats_t` (estrutura de dados anterior) de quaisquer dados.
 
 
 
