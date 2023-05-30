@@ -67,7 +67,7 @@ typedef volatile struct fs_ai_api_vcu2ai_struct {
 	volatile _Alignas(4) uint16_t							VCU2AI_RR_PULSE_COUNT;
 } fs_ai_api_vcu2ai;
 ```
-**Esta estrutura esta dependente das seguintes ( o nome dos vários elementos é por vezes suficiente para perceber o seu papel, porém nem sempre como tal mais a baixo no documento temos uma descrição mais pormenorizada de todos os sinais)**
+**Esta estrutura esta dependente das seguintes ( o nome dos vários elementos é por vezes suficiente para perceber o seu papel, porém, nem sempre, como tal mais a baixo no documento temos uma descrição mais pormenorizada de todos os sinais)**
 ```c
 typedef enum fs_ai_api_ami_state_e {
 	AMI_NOT_SELECTED = 0,
