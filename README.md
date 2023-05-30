@@ -58,6 +58,7 @@ Can't open [vcan0]fs_ai_api_init() failed
     sudo ip link add dev vcan0 type vcan
 
     sudo ip link set vcan0 up
+    sudo ip link set vcan0 up
 
 
 7- ./fs-ai_api_tester vcan0 
