@@ -5,6 +5,7 @@
 - **listar as funções que temos de utilizar e estruturas de dados mais importantes;**
 - **listar os comandos para correr o tester;**
 - **listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV;**
+- [Link para o repositório no GitHub](https://github.com/FS-AI/FS-AI_API/tree/main) **para a informação original**
 
 ## Funções e estruturas de dados
 
