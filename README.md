@@ -1,10 +1,43 @@
-## Introdução
+# Introdução
 
-### Este documento pretende:
+## Este documento pretende:
 
-- **listar os comandos para correr o tester;**
 - **listar as funções que temos de utilizar e estruturas de dados mais importantes;**
+- **listar os comandos para correr o tester;**
 - **listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV;**
+
+## Funções e estruturas de dados
+
+**O envio e receção dos dados é feito através do CAN bus e por funções já implementadas que só temos de chamar com as estruturas de dados certas:**
+## fs-ai_api_init
+
+```c
+int fs-ai_api_init(char *CAN_interface, int debug, int simulate);
+```
+
+Função que inicia a biblioteca.
+
+### Parâmetros
+
+- `char *CAN_interface`: String que referencia uma interface CAN válida.
+
+- `int debug`:
+  - Se `debug` for diferente de 0: O output do debugging fica no stdout.
+  - De outra forma: A biblioteca não é utilizada.
+
+- `int simulate`:
+  - Se `simulate` for diferente de 0: Os valores de simulação são carregados para a estrutura de dados.
+  - De outra forma: Nada acontece.
+
+### Retorno
+
+- `int`: 
+  - `EXIT_SUCCESS` (0) em caso de sucesso.
+  - `EXIT_FAILURE` (8) em caso de falha.
+
+**Nota:** Estes dados não representam a operação do carro e mudam a cada chamada de `fs_ai_api_vcu2ai_get_data()`.
+
+
 
 ## Para correr o tester
 
