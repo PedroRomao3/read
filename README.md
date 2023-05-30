@@ -37,7 +37,68 @@ Função que inicia a biblioteca.
 
 **Nota:** Estes dados não representam a operação do carro e mudam a cada chamada de `fs_ai_api_vcu2ai_get_data()`.
 
+### fs_ai_api_vcu2ai_get_data
 
+```c
+void fs_ai_api_vcu2ai_get_data(fs_ai_api_vcu2ai *data);
+```
+
+Povoa a estrutura de dados `fs_ai_api_vcu2ai` com os últimos dados recebidos do veículo. A recepção dos dados é feita de forma assíncrona e armazenada temporariamente conforme vai sendo recebido.
+
+#### Parâmetros
+
+- `fs_ai_api_vcu2ai *data`: Estrutura de dados que será populada.
+```c
+typedef volatile struct fs_ai_api_vcu2ai_struct {
+	volatile _Alignas(4) fs_ai_api_handshake_receive_bit_e	VCU2AI_HANDSHAKE_RECEIVE_BIT;
+	volatile _Alignas(4) fs_ai_api_res_go_signal_bit_e		VCU2AI_RES_GO_SIGNAL;
+	volatile _Alignas(4) fs_ai_api_as_state_e				VCU2AI_AS_STATE;
+	volatile _Alignas(4) fs_ai_api_ami_state_e				VCU2AI_AMI_STATE;
+	volatile _Alignas(4) float								VCU2AI_STEER_ANGLE_deg;
+	volatile _Alignas(4) float								VCU2AI_BRAKE_PRESS_F_pct;
+	volatile _Alignas(4) float								VCU2AI_BRAKE_PRESS_R_pct;
+	volatile _Alignas(4) float								VCU2AI_FL_WHEEL_SPEED_rpm;
+	volatile _Alignas(4) float								VCU2AI_FR_WHEEL_SPEED_rpm;
+	volatile _Alignas(4) float								VCU2AI_RL_WHEEL_SPEED_rpm;
+	volatile _Alignas(4) float								VCU2AI_RR_WHEEL_SPEED_rpm;
+	volatile _Alignas(4) uint16_t							VCU2AI_FL_PULSE_COUNT;
+	volatile _Alignas(4) uint16_t							VCU2AI_FR_PULSE_COUNT;
+	volatile _Alignas(4) uint16_t							VCU2AI_RL_PULSE_COUNT;
+	volatile _Alignas(4) uint16_t							VCU2AI_RR_PULSE_COUNT;
+} fs_ai_api_vcu2ai;
+```
+**Esta estrutura esta dependente das seguintes, o nome dos vários elementos é por vezes suficiente para perceber o seu papel, porém nem sempre como tal mais a baixo no documento temos uma descrição mais pormenorizada de todos os sinais**
+```c
+typedef enum fs_ai_api_ami_state_e {
+	AMI_NOT_SELECTED = 0,
+	AMI_ACCELERATION = 1,
+	AMI_SKIDPAD = 2,
+	AMI_AUTOCROSS = 3,
+	AMI_TRACK_DRIVE = 4,
+	AMI_STATIC_INSPECTION_A = 5,
+	AMI_STATIC_INSPECTION_B = 6,
+	AMI_AUTONOMOUS_DEMO = 7,
+} fs_ai_api_ami_state_e;
+
+typedef enum fs_ai_api_as_state_e {
+	AS_OFF = 1,
+	AS_READY = 2,
+	AS_DRIVING = 3,
+	AS_EMERGENCY_BRAKE = 4,
+	AS_FINISHED = 5,
+} fs_ai_api_as_state_e;
+
+typedef enum fs_ai_api_res_go_signal_bit_e {
+	RES_GO_SIGNAL_NO_GO = 0,
+	RES_GO_SIGNAL_GO = 1,
+} fs_ai_api_res_go_signal_bit_e;
+
+typedef enum fs_ai_api_handshake_receive_bit_e {
+	HANDSHAKE_RECEIVE_BIT_OFF = 0,
+	HANDSHAKE_RECEIVE_BIT_ON = 1,
+} fs_ai_api_handshake_receive_bit_e;
+
+```
 
 ## Para correr o tester
 
