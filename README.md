@@ -365,7 +365,7 @@ to run on vcan0.
 To bring down the link to reset:
 -  sudo ip link set vcan0 down
 -  sudo ip link delete vcan0
-Para correr outravez
+	Para correr outravez
 -  sudo ip link add dev vcan0 type vcan
 -  sudo ip link set vcan0 up
 -  step5
