@@ -99,6 +99,48 @@ typedef enum fs_ai_api_handshake_receive_bit_e {
 } fs_ai_api_handshake_receive_bit_e;
 
 ```
+### fs_ai_api_ai2vcu_set_data
+
+```c
+void fs_ai_api_ai2vcu_set_data(fs_ai_api_ai2vcu *data);
+```
+A periodicidade ideal de chamamento da função é 10ms, sendo que existe um timer interno que evita que esse período desça para menos de 8ms (evitar overload do CAN bus). Além disso, períodos muito grandes ativam o  CAN timeout diagnostics da ECU (Eletronics Control Unit).
+
+Transmite os frames de CAN para o VCU.
+
+#### Parâmetros
+
+`fs_ai_api_ai2vcu *data`: Estrutura de dados com os dados que serão passados para o VCU.
+
+```c
+#ifdef __cplusplus // caso C++
+typedef volatile struct alignas(4) fs_ai_api_ai2vcu_struct {
+	volatile fs_ai_api_mission_status_e		AI2VCU_MISSION_STATUS;
+	volatile fs_ai_api_direction_request_e	AI2VCU_DIRECTION_REQUEST;
+	volatile fs_ai_api_estop_request_e		AI2VCU_ESTOP_REQUEST;
+	volatile fs_ai_api_handshake_send_bit_e	AI2VCU_HANDSHAKE_SEND_BIT;
+	volatile float							AI2VCU_STEER_ANGLE_REQUEST_deg;
+	volatile float							AI2VCU_AXLE_SPEED_REQUEST_rpm;
+	volatile float							AI2VCU_AXLE_TORQUE_REQUEST_Nm;
+	volatile float							AI2VCU_BRAKE_PRESS_REQUEST_pct;
+} fs_ai_api_ai2vcu;
+#else // C
+typedef volatile struct fs_ai_api_ai2vcu_struct {
+	volatile _Alignas(4) fs_ai_api_mission_status_e		AI2VCU_MISSION_STATUS;
+	volatile _Alignas(4) fs_ai_api_direction_request_e	AI2VCU_DIRECTION_REQUEST;
+	volatile _Alignas(4) fs_ai_api_estop_request_e		AI2VCU_ESTOP_REQUEST;
+	volatile _Alignas(4) fs_ai_api_handshake_send_bit_e	AI2VCU_HANDSHAKE_SEND_BIT;
+	volatile _Alignas(4) float							AI2VCU_STEER_ANGLE_REQUEST_deg;
+	volatile _Alignas(4) float							AI2VCU_AXLE_SPEED_REQUEST_rpm;
+	volatile _Alignas(4) float							AI2VCU_AXLE_TORQUE_REQUEST_Nm;
+	volatile _Alignas(4) float							AI2VCU_BRAKE_PRESS_REQUEST_pct;
+} fs_ai_api_ai2vcu;
+#endif
+```
+
+
+
+
 
 ## Para correr o tester
 
