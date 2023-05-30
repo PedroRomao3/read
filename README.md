@@ -14,12 +14,19 @@ Portanto para testar sem hardware:
 
 **build and run:**
 
-1-	git clone git@github.com:FS-AI/FS-AI_API.git  
-    clone do repositório
+1-	
+
+    git clone git@github.com:FS-AI/FS-AI_API.git  
+
+ 
+   clone do repositório
 
 
-2-	cd FS-AI_API/
-	verificar que estamos no diretório principal, que tem: 
+2-	
+
+	cd FS-AI_API/
+	
+verificar que estamos no diretório principal, que tem: 
 	
 	\Docs
 		(documentation files)
@@ -32,13 +39,18 @@ Portanto para testar sem hardware:
 	\images
 		(images for Markdown files)
 
-3-  cd FS-AI_API_Tester  
-    or  
-    cd FS-AI_API_Console
+3-  
+
+	cd FS-AI_API_Tester  
+   or  
+    
+    	cd FS-AI_API_Console
 
 
-4-	make  
-    to build (library will build / rebuild as needed).
+4-	
+
+	make  
+   to build (library will build / rebuild as needed).
 
 5-
 
@@ -65,9 +77,11 @@ Can't open [vcan0]fs_ai_api_init() failed
     sudo ip link set vcan0 up
 
 
-7- ./fs-ai_api_tester vcan0 
+7- 
 
-	to run on vcan0.
+	./fs-ai_api_tester vcan0 
+
+to run on vcan0.
 
 
 To bring down the link to reset:
@@ -78,14 +92,14 @@ Para correr outravez
 -  sudo ip link set vcan0 up
 -  step5
 
-Caso tenha havido tentar correr:
+Caso tenha havido erros tentar correr:
 
 - sudo modprobe can_dev
 - sudo modprobe can
 - sudo modprobe can_raw
 - sudo modprobe vcan
 - sudo apt-get install can-utils
-- step 2
+- e voltar ao step 2
 
 ## Mensagens CAN
 
