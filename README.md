@@ -40,9 +40,9 @@ Portanto para testar sem hardware:
 4-	make  
     to build (library will build / rebuild as needed).
 
+5-	./fs-ai_api_tester vcan0  
+    to run on vcan0.
 
-5-	./fs-ai_api_tester vcan0 
-	to run on vcan0.
 
 **Em caso de aparecer este erro**:
 Called fs_ai_api_init(vcan0, 1, 1)
