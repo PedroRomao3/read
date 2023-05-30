@@ -220,3 +220,63 @@ Este documento pretende listar os sinais do CAN_B bus usados para as comunicaç�
 |`FRONT_AXLE_TRQ_REQUEST`|`Unsigned`|Torque do eixo dianteiro pedido|
 |`FRONT_AXLE_TRQ_MAX`|`Unsigned`|Torque máximo permitido no eixo de acionamento|
 |||Intervalo: [0, 195]|
+
+**VCU2AI_Drive_R:** Feedback do motor da frente
+
+| Sinal.    | Tipo     | Descrição                         |
+| :-------- | :------- | :-------------------------------- |
+| `FRONT_AXLE_TRQ`  | `Unsigned` |O torque verdadeiro do eixo traseiro|
+|||Intervalo: [-195, 195]|
+|`FRONT_AXLE_TRQ_REQUEST`|`Unsigned`|Torque do eixo traseiro pedido|
+|`FRONT_AXLE_TRQ_MAX`|`Unsigned`|Torque máximo permitido no eixo de acionamento|
+|||Intervalo: [0, 195]|
+
+**VCU2AI_Steer:** Feedback do controlador de direação
+
+| Sinal.    | Tipo     | Descrição                         |
+| :-------- | :------- | :-------------------------------- |
+| `ANGLE `  | `signed` |Verdadeiro ângulo de direção|
+|||Intervalo: [-21.0, 21.0]|
+|`ANGLE_MAX`|`Unsigned`|Ângulo máximo permitido igual para ambos os lados|
+|`ANGLE_REQUEST`|`Signed`|Ângulo de direção pedido através de (AI2VCU_Steer,STEER_REQUEST)|
+
+**VCU2AI_Brake:** Feedback do sistema hidraulico de travagem
+
+| Sinal.    | Tipo     | Descrição                         |
+| :-------- | :------- | :-------------------------------- |
+| `HYD_PRESS_F_pct `  | `Unsigned` |Pressão verdadeira no travão da frente|
+|||Intervalo: [0, 100]|
+| `HYD_PRESS_F_REQ_pct  `  | `Unsigned` |Pedido de alteração da pressão do travão da frente através de ((AI2VCU_Brake, HYD_PRESS_F_REQ_pct))|
+| `HYD_PRESS_R_pct `  | `Unsigned` |Pressão verdadeira no travão de trás|
+|||Intervalo: [0, 100]|
+| `HYD_PRESS_R_REQ_pct  `  | `Unsigned` |Pedido de alteração da pressão do travão de trás através de ((AI2VCU_Brake, HYD_PRESS_R_REQ_pct))|
+
+| `STATUS_BRK` | `enum` | Estado do sistema de travagem|
+|||0 = initialising|
+|||1 = ready|
+|||2 = shutting down|
+|||3 = shutdown complete|
+|||4 = fault|
+
+**VCU2AI_Speeds:** Feedback do controlador de direação
+| Sinal.    | Tipo     | Descrição                         |
+| :-------- | :------- | :-------------------------------- |
+| `FL_WHEEL_SPEED `  | `Unsigned` |Velocidade do roda esquerdo da frente|
+| `FR_WHEEL_SPEED `  | `Unsigned` |Velocidade do roda direito da frente|
+| `RL_WHEEL_SPEED `  | `Unsigned` |Velocidade do roda esquerdo da trás|
+| `RR_WHEEL_SPEED `  | `Unsigned` |Velocidade do roda direito de trás|
+
+**VCU2AI_Wheel_counts:** Raw pulse count measurements dos sensores de velocidade das rodas
+
+| Sinal.    | Tipo     | Descrição                         |
+| :-------- | :------- | :-------------------------------- |
+| `FL_PULSE_COUNT `  | `Unsigned` |Pulse counts da roda esquerda da frente|
+|||Intervalo: [0, 65535]|
+| `FR_PULSE_COUNT `  | `Unsigned` |Pulse counts da roda direita da frente|
+|||Intervalo: [0, 65535]|
+| `RL_PULSE_COUNT `  | `Unsigned` |Pulse counts da roda esquerda de trás|
+|||Intervalo: [0, 65535]|
+| `RR_PULSE_COUNT `  | `Unsigned` |Pulse counts da roda direita da frente|
+|||Intervalo: [0, 65535]|
+
+**VCU_STATUS:** VCU status and diagnostic data
