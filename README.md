@@ -1,7 +1,7 @@
 ## Introdução
 
 ### Este documento pretende:
-####	 -listar os comandos para correr o tester;
+**-listar os comandos para correr o tester;**
 ####	 -listar as funções que temos de utilizar e estruturas de dados mais importantes;
 ####	 -listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV;
 	
