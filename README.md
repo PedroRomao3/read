@@ -1,6 +1,52 @@
 ## Introdução
 
-Este documento pretende listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV, tendo a lista de comandos necessários para correr o tester no fim;
+### Este documento pretende:
+####	 -listar os comandos para correr o tester;
+####	 -listar as funções que temos de utilizar e estruturas de dados mais importantes;
+####	 -listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV;
+	
+
+## Para correr o tester
+
+Utilizando uma CAN virtual (vcan0, por exemplo,podemos correr o tester fornecido que dá display ás informações da VCU ,caso o output seja iniaco a um pela função de init);
+
+Portanto para testar sem hardware:
+
+
+
+**build and run:**
+
+1- clone do repositório
+
+2-verificar que estamos no diretório principal, que tem: 
+\Docs
+	(documentation files)
+\FS-AI_API
+	(library source code & makefile)
+\FS-AI_API_Console
+	(Console test programme)
+\FS-AI_API_Tester
+	(Test programme)
+\images
+	(images for Markdown files)
+
+3-cd FS-AI_API_Tester or cd FS-AI_API_Console
+
+4-make to build (library will build / rebuild as needed).
+
+5- ./fs-ai_api_tester vcan0 to run on vcan0.
+
+
+////
+6-
+ to bring down the link to reset:
+ -sudo ip link set vcan0 down
+ -sudo ip link delete vcan0
+7- para correr outravez
+    sudo ip link add dev vcan0 type vcan
+    sudo ip link set vcan0 up (step 5);
+
+
 
 ## Mensagens CAN
 
@@ -328,49 +374,3 @@ Este documento pretende listar os sinais do CAN_B bus usados para as comunicaç�
 Utilizando uma CAN virtual (vcan0, por exemplo,podemos correr o tester fornecido que dá display ás informações na VCU ,caso o output seja iniaco a um pela função de init);
 
 Portanto para testar sem hardware:
-
-**setup:**
-
- these commands may need to be used once:
-
- sudo modprobe can_dev
- sudo modprobe can
- sudo modprobe can_raw
- sudo modprobe vcan
- sudo apt-get install can-utils
-
- vcan0 for testing without hardware
- sudo ip link add dev vcan0 type vcan
- sudo ip link set vcan0 up
-
-**build and run:**
-
-1- clone do repositório
-
-2-verificar que estamos no diretório principal, que tem: 
-\Docs
-	(documentation files)
-\FS-AI_API
-	(library source code & makefile)
-\FS-AI_API_Console
-	(Console test programme)
-\FS-AI_API_Tester
-	(Test programme)
-\images
-	(images for Markdown files)
-
-3-cd FS-AI_API_Tester or cd FS-AI_API_Console
-
-4-make to build (library will build / rebuild as needed).
-
-5- ./fs-ai_api_tester vcan0 to run on vcan0.
-
-
-////
-6-
- to bring down the link to reset:
- -sudo ip link set vcan0 down
- -sudo ip link delete vcan0
-7- para correr outravez
-    sudo ip link add dev vcan0 type vcan
-    sudo ip link set vcan0 up (step 5);
