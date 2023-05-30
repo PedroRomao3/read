@@ -30,9 +30,10 @@ verificar que estamos no diretório principal, que tem:
 \images
 	(images for Markdown files)
 
-3-  cd FS-AI_API_Tester
-			or 
-	cd FS-AI_API_Console
+3-  cd FS-AI_API_Tester  
+    or  
+    cd FS-AI_API_Console
+
 
 4-  make
 	to build (library will build / rebuild as needed).
