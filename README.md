@@ -2,23 +2,23 @@
 
 ### Este documento pretende:
 
-- **-listar os comandos para correr o tester;**
-- **-listar as funções que temos de utilizar e estruturas de dados mais importantes;**
-- **-listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV;**
+- **listar os comandos para correr o tester;**
+- **listar as funções que temos de utilizar e estruturas de dados mais importantes;**
+- **listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV;**
 
 ## Para correr o tester
 
-Utilizando uma CAN virtual (vcan0, por exemplo,podemos correr o tester fornecido que dá display ás informações da VCU ,caso o output seja iniaco a um pela função de init);
+Utilizando uma CAN virtual (vcan0, por exemplo) podemos correr o tester fornecido que dá display ás informações da VCU ;
 
 Portanto para testar sem hardware:
 
-
-
 **build and run:**
 
-1- clone do repositório
+1- 	git clone git@github.com:FS-AI/FS-AI_API.git
+	clone do repositório
 
-2-verificar que estamos no diretório principal, que tem: 
+2- cd FS-AI_API/ 
+verificar que estamos no diretório principal, que tem: 
 \Docs
 	(documentation files)
 \FS-AI_API
@@ -30,23 +30,45 @@ Portanto para testar sem hardware:
 \images
 	(images for Markdown files)
 
-3-cd FS-AI_API_Tester or cd FS-AI_API_Console
+3-  cd FS-AI_API_Tester
+			or 
+	cd FS-AI_API_Console
 
-4-make to build (library will build / rebuild as needed).
+4-  make
+	to build (library will build / rebuild as needed).
 
-5- ./fs-ai_api_tester vcan0 to run on vcan0.
+5- ./fs-ai_api_tester vcan0 
+	to run on vcan0.
+
+**Em caso de aparecer este erro**:
+Called fs_ai_api_init(vcan0, 1, 1)
+Simulate Mode enabled...
+Error in ioctl(): No such device
+Can't open [vcan0]fs_ai_api_init() failed
+
+6-  sudo ip link add dev vcan0 type vcan
+	sudo ip link set vcan0 up
+
+7- ./fs-ai_api_tester vcan0 
+	to run on vcan0.
 
 
-////
-6-
- to bring down the link to reset:
- -sudo ip link set vcan0 down
- -sudo ip link delete vcan0
-7- para correr outravez
-    sudo ip link add dev vcan0 type vcan
-    sudo ip link set vcan0 up (step 5);
+To bring down the link to reset:
+-  sudo ip link set vcan0 down
+-  sudo ip link delete vcan0
+Para correr outravez
+-  sudo ip link add dev vcan0 type vcan
+-  sudo ip link set vcan0 up
+-  step5
 
+Caso tenha havido tentar correr:
 
+- sudo modprobe can_dev
+- sudo modprobe can
+- sudo modprobe can_raw
+- sudo modprobe vcan
+- sudo apt-get install can-utils
+- step 2
 
 ## Mensagens CAN
 
