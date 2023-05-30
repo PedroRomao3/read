@@ -43,7 +43,7 @@ verificar que estamos no diretório principal, que tem:
 
 	cd FS-AI_API_Tester  
 	
-   or
+     or
 	
 	cd FS-AI_API_Console
 
