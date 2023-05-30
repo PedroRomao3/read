@@ -423,8 +423,3 @@ Caso tenha havido erros tentar correr:
 | `WARN_MISSION_STATUS`            | `Bit`    | Warning flag for the mission status fault                        |
 
 
-## Para correr o tester
-
-Utilizando uma CAN virtual (vcan0, por exemplo,podemos correr o tester fornecido que dá display ás informações na VCU ,caso o output seja iniaco a um pela função de init);
-
-Portanto para testar sem hardware:
