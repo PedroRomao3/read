@@ -7,7 +7,11 @@
 ####	 -listar as funções que temos de utilizar e estruturas de dados mais importantes;
 
 ####	 -listar os sinais do CAN_B bus usados para as comunicações entre o AI Computer e o Vehicle Control Unit no ADS_DV;
-	
+| Sinal     | Tipo     | Descrição                  |
+| :-------- | :------- | :------------------------- |
+| `Accel_longitudinal_ms2` | `Signed` | Aceleração longitudinal (m/s2) |
+| `Accel_lateral_ms2` | `Signed` | Aceleração lateral do veículo (m/s2) |
+| `Yaw_rate_degpd` | `Signed` | Taxa de yaw (º/s) |	
 
 ## Para correr o tester
 
