@@ -42,9 +42,10 @@ verificar que estamos no diretório principal, que tem:
 3-  
 
 	cd FS-AI_API_Tester  
-   or  
-    
-    	cd FS-AI_API_Console
+	
+   or
+	
+	cd FS-AI_API_Console
 
 
 4-	
