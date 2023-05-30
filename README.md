@@ -22,7 +22,7 @@ Portanto para testar sem hardware:
    clone do repositório
 
 
-**2-	
+**2-**
 
 	cd FS-AI_API/
 	
@@ -39,7 +39,7 @@ verificar que estamos no diretório principal, que tem:
 	\images
 		(images for Markdown files)
 
-**3-  
+**3-**  
 
 	cd FS-AI_API_Tester  
 	
@@ -48,12 +48,12 @@ verificar que estamos no diretório principal, que tem:
 	cd FS-AI_API_Console
 
 
-**4-	
+**4-**	
 
 	make  
    to build (library will build / rebuild as needed).
 
-**5-
+**5-**
 
 
     ./fs-ai_api_tester vcan0      
@@ -72,13 +72,13 @@ Error in ioctl(): No such device
 Can't open [vcan0]fs_ai_api_init() failed
 
 
-**6- 
+**6-** 
 
     sudo ip link add dev vcan0 type vcan
     sudo ip link set vcan0 up
 
 
-**7- 
+**7-** 
 
 	./fs-ai_api_tester vcan0 
 
