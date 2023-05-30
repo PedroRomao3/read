@@ -294,7 +294,7 @@ Portanto para testar sem hardware:
 
 **1-**	
 	
-    git clone [git@github.com:FS-AI/FS-AI_API.git](git@github.com:FS-AI/FS-AI_API.git)
+    git clone git@github.com:FS-AI/FS-AI_API.git
     
 
  
